@@ -29,18 +29,19 @@ passport.use(
       passReqToCallback: true,
     },
     (req, username, password, done) => {
+      console.log(req.body.ip)
       User.findOne({ username: username }, function (err, user) {
         if (err) {
           console.log("Error in SignUp: " + err);
           return done(err);
         }
-
         if (user) {
           return done(null, false);
         }
         const newUser = {
           username: username,
-          password: createHash(password)
+          password: createHash(password),
+          ip:req.body.ip,
         };
         User.create(newUser, (err, userWithId) => {
           if (err) {
