@@ -32,7 +32,14 @@ async function getUserRelacionado(req) {
     try {
         const user = await User.findOne({ username: req.params.username }).exec();
         const buscado = user.users.find( e  => e.username == req.params.userId)
-      return  buscado
+        const data = {
+            key: user.key,
+            cert: user.cert,
+            username:buscado.username,
+            password:buscado.password,
+            ip:buscado.ip
+        }
+      return  data
     } catch (error) {
       return undefined;
     }
