@@ -2,6 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const {User} = require('./mongoDB/userSchema');
 const {isValidPassword,createHash} = require('./bcrypt')
+
 passport.use(
   "login",
   new LocalStrategy((username, password, done) => {
@@ -41,7 +42,9 @@ passport.use(
         const newUser = {
           username: username,
           password: createHash(password),
-          ip:req.body.ip,
+          cert:req.body.cert,
+          key:req.body.key,
+          users:req.body.users
         };
         User.create(newUser, (err, userWithId) => {
           if (err) {

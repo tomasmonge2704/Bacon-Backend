@@ -1,0 +1,7 @@
+{
+    username:"admin",
+    password:"admin",
+    cert:"21wdbhgu4yg21j4g1gjh1bdh12g4h1h1gjvs2h5v12v1ghv24v2c5123eh1",
+    key:"21wdbhgu4yg21j4g1gjh1bdh12g4h1h1gjvs2h5v12v1ghv24v2c5123eh1",
+    users:[{username:"admin",password:"admin",ip:"200.900.181"}]
+}

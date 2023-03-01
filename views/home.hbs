@@ -29,13 +29,11 @@
 
 <body>
   <div class="shadow-lg p-3 mb-5 bg-white rounded"
-    style="display: flex; flex-wrap: wrap; justify-content:space-around; margin:10%">
+    style="display: flex; flex-wrap: wrap; justify-content:flex-start; margin:5% 10% 10% 10%">
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Username</th>
-          <th scope="col">Password</th>
-          <th scope="col">IP del servidor</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
@@ -43,12 +41,10 @@
       <tbody>
 
         {{#each result}}
-        <tr>
+        <tr onclick="getUser('{{this.username}}')">
           <td>{{this.username}}</td>
-          <td>{{this.password}}</td>
-          <td>{{this.ip}}</td>
           <td>
-            <button type="button" class="btn btn-secondary" onclick="getUser('{{this.username}}')">
+            <button type="button" class="btn btn-secondary" onclick="getUpdateUser('{{this.username}}')">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-pencil-fill" viewBox="0 0 16 16">
                 <path
@@ -66,7 +62,7 @@
       </tbody>
 
     </table>
-    <form action="/login" method="get">
+    <form action="/login" method="get" style="margin-right:5% ;">
       <button class="btn btn-dark mt-5 mb-5">Volver</button>
     </form>
      <form action="/signup" method="get">
@@ -79,11 +75,17 @@ function deleteUser(username){
 axios.delete(`/user/${username}`)
 .then((response) => {
     location.reload();
-    console.log(response)
 })
 .catch((err)=>{
     console.log(err)
 })
+}
+
+function getUpdateUser(username){
+  fetch(`/user/${username}/actualizar`, {
+    method: 'GET'
+  })
+  window.location.href = `/user/${username}/actualizar`;
 }
 function getUser(username){
 fetch(`/user/${username}`, {

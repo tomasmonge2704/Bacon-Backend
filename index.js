@@ -8,6 +8,8 @@ require('dotenv').config();
 const loginRoutes = require('./src/routes/login');
 const Routes = require('./src/routes/inicio');
 const signupRoutes = require('./src/routes/signup');
+const userRoutes = require('./src/routes/user');
+
 const exphbs = require('express-handlebars')
 require('./src/mongoDB/connect')
 // Configuración de Express
@@ -35,7 +37,7 @@ app.use(passport.session());
 app.use('/login', loginRoutes);
 app.use('/', Routes);
 app.use('/signup', signupRoutes);
-
+app.use('/user', userRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {

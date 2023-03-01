@@ -1,13 +1,8 @@
 const { User } = require("./userSchema");
 const {createHash} = require("../bcrypt")
-async function createUser(username, password, ip) {
-  const newUser = {
-    username: username,
-    password: createHash(password),
-    ip: ip,
-  };
+async function createUser(user) {
   try {
-    User.create(newUser, (err, userWithId) => {
+    User.create(user, (err, userWithId) => {
       if (err) {
         console.log("Error in Saving user: " + err);
         return err;
@@ -33,6 +28,15 @@ async function getUser(username) {
       return undefined;
     }
   }
+async function getUserRelacionado(req) {
+    try {
+        const user = await User.findOne({ username: req.params.username }).exec();
+        const buscado = user.users.find( e  => e.username == req.params.userId)
+      return  buscado
+    } catch (error) {
+      return undefined;
+    }
+  }
 async function deleteUser (username){
     try {
           return await User.deleteOne({ username: username });
@@ -40,12 +44,13 @@ async function deleteUser (username){
         return undefined;
       }
 }
-async function updateUser (username,newUsername,password,ip){
+async function updateUser (req){
     try {
-        const user = await User.findOne({ username: username }).exec();
-        user.username = newUsername
-        user.password = createHash(password)
-        user.ip = ip;
+        const user = await User.findOne({ username: req.username }).exec();
+        user.username = req.newUsername;
+        user.password = createHash(req.password);
+        user.cert = req.cert;
+        user.key = req.key;
           return await User.updateOne(
             { _id: user._id },
             { $set: user }
@@ -54,4 +59,40 @@ async function updateUser (username,newUsername,password,ip){
         return error;
       }
 }
-module.exports = { listarAll,createUser,updateUser,deleteUser,getUser };
+async function updateUserRelacionado (req){
+    try {
+        const user = await User.findOne({ username: req.params.username }).exec();
+        const buscado = user.users.find( e  => e.username == req.params.userId)
+        buscado.username = req.body.username;
+        buscado.password = req.body.password;
+        buscado.ip = req.body.ip;
+        return await User.updateOne(
+            { _id: user._id },
+            { $set: user }
+          );
+      } catch (error) {
+        return error;
+      }
+}
+async function addUserRelacionado (req){
+    try {
+        const user = await User.findOne({ username: req.params.username }).exec();
+        if(user.users.length == 0 ){
+            user.users = [{username:req.body.username,password:req.body.password,ip:req.body.ip}]
+        }else{
+            const newUser = {
+                username:req.body.username,
+                password:req.body.password,
+                ip:req.body.ip
+            }
+            user.users.push(newUser)
+        }
+          return await User.updateOne(
+            { _id: user._id },
+            { $set: user }
+          );
+      } catch (error) {
+        return error;
+      }
+}
+module.exports = { getUserRelacionado,listarAll,createUser,updateUser,deleteUser,getUser,addUserRelacionado,updateUserRelacionado };
