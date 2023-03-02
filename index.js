@@ -23,7 +23,8 @@ app.engine("hbs", exphbs.engine({
 }))
 app.set("views", "./views");
 app.set("view engine", "hbs");
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '100mb' }));
+app.use(bodyParser.urlencoded({ limit:'100mb', extended: true }));
 app.use(express.json())
 app.use(cookieParser());
 app.use(session({
