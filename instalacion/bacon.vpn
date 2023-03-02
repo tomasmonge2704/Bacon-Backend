@@ -1,0 +1,54 @@
+﻿# VPN Client VPN Connection Setting File
+# 
+# This file is exported using the VPN Client Manager.
+# The contents of this file can be edited using a text editor.
+# 
+# When this file is imported to the Client Connection Manager
+#  it can be used immediately.
+
+declare root
+{
+	bool CheckServerCert false
+	uint64 CreateDateTime 0
+	uint64 LastConnectDateTime 0
+	bool StartupAccount false
+	uint64 UpdateDateTime 0
+
+	declare ClientAuth
+	{
+		uint AuthType 3
+		byte ClientCert MIIDMDCCAhigAwIBAgIBADANBgkqhkiG9w0BAQsFADAXMRUwEwYDVQQDDAxiYWNvbi1yZW1vdG8wHhcNMjEwNDA1MTc0NTAyWhcNMzEwNDAzMTc0NTAyWjAXMRUwEwYDVQQDDAxiYWNvbi1yZW1vdG8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBb6MpC8AUXaO9Ei6XH7m0HzHRBZ+bqf7PuIWtVjUDy5eq/NhtWFlXkcG+a/gFx53egnxCuBNzpVCfRzJ27tkMN4AoSbrx7Kwxe2dBqwAOyS5MQ9QqEkN4fyxr4MVsIeX/ZY3obHN7Q6BXPKImILyFOSu05Mn5McjlxEWl6cgAHIPIzymJS6apf6bAAtLvd99T8Lh8k+eAaSum4o5b8PVT/uX+nXfEEen5ppMOzH21ZCbmUMYMZ22OWVlmMrZAJllLqMW8X6Bthdv3wDKo/Y+eGtyGcACoJhzPTjYYMSJgQ9Re2wPBfDLvadJmW4v756q+GlMUuJHGxNT535Feyh0LAgMBAAGjgYYwgYMwDwYDVR0TAQH/BAUwAwEB/zALBgNVHQ8EBAMCAfYwYwYDVR0lBFwwWgYIKwYBBQUHAwEGCCsGAQUFBwMCBggrBgEFBQcDAwYIKwYBBQUHAwQGCCsGAQUFBwMFBggrBgEFBQcDBgYIKwYBBQUHAwcGCCsGAQUFBwMIBggrBgEFBQcDCTANBgkqhkiG9w0BAQsFAAOCAQEAfHMs0wt8/F1Exq3zW/Ng7qrxw5hhpubNovL+mWu4S0phsOifcRpb3m2/nGyiS89vGS1MclrYMdxcwYZQIkfpPclXv7xwMrJGZkB35QlKQmTPAYjpAO7BIAyXAxNTEz1q3XSVfYvSU+PaRp0rWHphOU+iGlI48lYesFGPW3U8Ks12+ya42LamDjQpo+myZiwt8ezZbY0fj6ty28U1DAYE5SSB+NO7gDZnXa7xkTZ75xML6lEXjIvW/18NDf+N4LrLbIio42BqWAHp4fcHtSxLfN4+triq9a7oAPKvNqzMOZAFj5cd9sGOHGK7lPTa7TFdlVCldSmpFh6WDYcBmIct4g==
+		byte ClientKey MIIEpAIBAAKCAQEAwW+jKQvAFF2jvRIulx+5tB8x0QWfm6n+z7iFrVY1A8uXqvzYbVhZV5HBvmv4Bced3oJ8QrgTc6VQn0cydu7ZDDeAKEm68eysMXtnQasADskuTEPUKhJDeH8sa+DFbCHl/2WN6Gxze0OgVzyiJiC8hTkrtOTJ+THI5cRFpenIAByDyM8piUumqX+mwALS73ffU/C4fJPngGkrpuKOW/D1U/7l/p13xBHp+aaTDsx9tWQm5lDGDGdtjllZZjK2QCZZS6jFvF+gbYXb98AyqP2PnhrchnAAqCYcz042GDEiYEPUXtsDwXwy72nSZluL++eqvhpTFLiRxsTU+d+RXsodCwIDAQABAoIBAQCx/BS3Gda9ZoPY3rf72fc3Y1SlLXV09/A8FV765U2WlmiRrmE+C4L5bmZE3neyacA7EvlfMpzDViNey1YF1TPlZ9QGPgFDxS+TwCZ8Z+l/sWFmTysTIwbuAqZPBNzi6DYGz9zJNbD0hH8uhd31Ez4jnz02DyZAoqxlrjkftoKOhhQiBl28mqwL9eZrkgnT46owfhHkyfYxH6uCA+tPRcqiff+aKAN/u+LA6ZMZkJqdO3sCMMIUONiP1A7T+PovsLYuYR7kvTQq1JEnjd0GfvTyiETenrpKPoCbRGFFHSjH6qk48W7WIbv4SWaBWe1s7EA5cBxEK0m6t6QLUEYTXo0xAoGBAOsZxHQSYMzazZQvZOQmqYZrBHI/Jbm9F7nw3jLNKtJ0mtP9QqWag6fJOJwPIc3xAjBEOnY0a9FBeJswb+y3Gq0YuDsS56SOZqEc8AsgDB+tOuzJob1oLJZnK65ErY1umOt1/gbEq/Q7F+Ez8zkk37AMZ9psA2L1n8ZDQK0TDgSdAoGBANKhs3O1jyzROdxsMLiDR1iyaYapuFcH+URDHb9ViuxWGGJ+2PEWDi8vD6jjjBGYsrmWT8rGXpLY76h/2cVHWZu/gSGQ41OfKu4VDeVF1WDSQs/ghNUHgkVeqecCCmeKTAXFVfaUOU6h9SUjoc04Rn2cqh4qQCyksvuqNu1QenPHAoGAc02J6htxWkcdeEXeR38muYQXBCkwSW4SCuG1OFkjXWBO5xVY8HtdgpbPqspJHAXNuvpbacm/7zsa+ZHB8ujCro5nHKHi9fPZJb9ZgztOduKw+ZzSNGC5LXKgG7IXJDxPx3txAMTISNoKliqyaR5Kjr8m2BsNdiVdHRGy0K99uokCgYAvts2uAo0CfAr9ccy/n42D/DaHeN73aCkBW6rbcwdbbk1r0oxWYMapzaFggttyCQNDo1dD+hfmcBoqM3wjgnw8Ge+oqOe2Q7I36LETJPSnUDouWQ/+KgtKp50ZZY7x0ZRTIlbM2tr4gxvDZAT9NihRwDGRT8Tl2BFrjS2QKND0dQKBgQDGJejx+sLJxWcXw4JHEkoEN71MWbmCD60H+f+D2tguKAEPO0/dSdQcK+fjtHECcCtUF/NkjjFDmERCXcxzkg8PaaZu2cpnsmT3K5I9n96x4iXoD94y79r3oeF7slyr6UX0LnGSM4sP84Znw54jrjymLfW5fi3zQGxPmXYuJH5cbg==
+		string Username bacon-remoto
+	}
+	declare ClientOption
+	{
+		string AccountName bacon
+		uint AdditionalConnectionInterval 1
+		uint ConnectionDisconnectSpan 0
+		string DeviceName VPN
+		bool DisableQoS false
+		bool HalfConnection false
+		bool HideNicInfoWindow false
+		bool HideStatusWindow false
+		string Hostname vpn3.tec-ser.com.ar
+		string HubName General
+		uint MaxConnection 1
+		bool NoRoutingTracking false
+		bool NoTls1 false
+		bool NoUdpAcceleration false
+		uint NumRetry 4294967295
+		uint Port 443
+		uint PortUDP 0
+		string ProxyName $
+		byte ProxyPassword $
+		uint ProxyPort 0
+		uint ProxyType 0
+		string ProxyUsername $
+		bool RequireBridgeRoutingMode false
+		bool RequireMonitorMode false
+		uint RetryInterval 15
+		bool UseCompress false
+		bool UseEncrypt true
+	}
+}

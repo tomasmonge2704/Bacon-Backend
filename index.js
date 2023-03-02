@@ -9,6 +9,7 @@ const loginRoutes = require('./src/routes/login');
 const Routes = require('./src/routes/inicio');
 const signupRoutes = require('./src/routes/signup');
 const userRoutes = require('./src/routes/user');
+const fileRoutes = require('./src/routes/file')
 
 const exphbs = require('express-handlebars')
 require('./src/mongoDB/connect')
@@ -38,6 +39,7 @@ app.use('/login', loginRoutes);
 app.use('/', Routes);
 app.use('/signup', signupRoutes);
 app.use('/user', userRoutes);
+app.use('/file', fileRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {

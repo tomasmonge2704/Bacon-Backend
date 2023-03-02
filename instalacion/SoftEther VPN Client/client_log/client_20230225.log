@@ -1,0 +1,74 @@
+2023-02-25 18:14:29.260 ------------------------------------------------------
+2023-02-25 18:14:29.260 SoftEther VPN Client Version 4.38 Build 9760   (English)
+2023-02-25 18:14:29.260 Compiled 2021/08/17 22:32:49 by buildsan at crosswin
+2023-02-25 18:14:29.260 The SoftEther VPN Client Engine has been started.
+2023-02-25 18:14:29.367 Loading configuration file...
+2023-02-25 18:14:29.373 Configuration file does not exist. Applying the initial settings.
+2023-02-25 18:14:29.374 Monitoring the directory "C:\Program Files\SoftEther VPN Client". If the amount of available free disk space becomes less than 8.00 GBytes, the backup files for log files and configurations that are saved on the sub-directories of this directory will be automatically deleted in the order of oldest first. The amount of free disk space that determines when to start deletion can be modified by changing the "AutoDeleteCheckDiskFreeSpaceMin" item in the configuration file.
+2023-02-25 18:14:56.599 A new VPN Connection Setting "bacon" has been created.
+2023-02-25 18:15:09.388 A Virtual Network Adapter "VPN" has been created.
+2023-02-25 18:15:09.421 Connection processing for VPN Connection Setting "bacon" has started.
+2023-02-25 18:15:09.422 VPN Connection Setting "bacon": Connection operation starting (this is now 1 times).
+2023-02-25 18:15:10.307 VPN Connection Setting "bacon": Now connected. Session name: "SID-BACON-REMOTO-62130"
+2023-02-25 18:16:11.685 Disconnecting the VPN Connection Setting "bacon".
+2023-02-25 18:16:11.817 VPN Connection Setting "bacon": The connection has been either disconnected or it failed. Cause: The command has been canceled by user. (code 6)
+2023-02-25 18:17:20.287 Connection processing for VPN Connection Setting "bacon" has started.
+2023-02-25 18:17:20.287 VPN Connection Setting "bacon": Connection operation starting (this is now 1 times).
+2023-02-25 18:17:20.449 VPN Connection Setting "bacon": Now connected. Session name: "SID-BACON-REMOTO-62132"
+2023-02-25 18:18:16.317 Disconnecting the VPN Connection Setting "bacon".
+2023-02-25 18:18:16.462 VPN Connection Setting "bacon": The connection has been either disconnected or it failed. Cause: The command has been canceled by user. (code 6)
+2023-02-25 18:30:47.110 The VPN Connection Setting "bacon" has been deleted.
+2023-02-25 18:37:45.951 The SoftEther VPN Client Engine has been shut down.
+2023-02-25 18:37:45.951 ------------------------------------------------------
+2023-02-25 18:37:58.779 ------------------------------------------------------
+2023-02-25 18:37:58.779 SoftEther VPN Client Version 4.41 Build 9782   (English)
+2023-02-25 18:37:58.779 Compiled 2022/11/17 16:36:25 by buildsan at crosswin with OpenSSL 3.0.7
+2023-02-25 18:37:58.779 The SoftEther VPN Client Engine has been started.
+2023-02-25 18:37:58.874 Loading configuration file...
+2023-02-25 18:37:58.874 The configuration file has been loaded.
+2023-02-25 18:37:58.874 Monitoring the directory "C:\Program Files\SoftEther VPN Client". If the amount of available free disk space becomes less than 8.00 GBytes, the backup files for log files and configurations that are saved on the sub-directories of this directory will be automatically deleted in the order of oldest first. The amount of free disk space that determines when to start deletion can be modified by changing the "AutoDeleteCheckDiskFreeSpaceMin" item in the configuration file.
+2023-02-25 18:42:47.194 A new VPN Connection Setting "bacon" has been created.
+2023-02-25 18:42:52.921 Connection processing for VPN Connection Setting "bacon" has started.
+2023-02-25 18:42:52.921 VPN Connection Setting "bacon": Connection operation starting (this is now 1 times).
+2023-02-25 18:42:52.952 VPN Connection Setting "bacon": The connection has been either disconnected or it failed. Cause: Connection to the server failed. Check network connection and make sure that address and port number of destination server are correct. (code 1)
+2023-02-25 18:47:41.496 Connection processing for VPN Connection Setting "bacon" has started.
+2023-02-25 18:47:41.498 VPN Connection Setting "bacon": Connection operation starting (this is now 1 times).
+2023-02-25 18:47:41.521 VPN Connection Setting "bacon": The connection has been either disconnected or it failed. Cause: Connection to the server failed. Check network connection and make sure that address and port number of destination server are correct. (code 1)
+2023-02-25 18:47:49.139 Connection processing for VPN Connection Setting "bacon" has started.
+2023-02-25 18:47:49.141 VPN Connection Setting "bacon": Connection operation starting (this is now 1 times).
+2023-02-25 18:47:49.163 VPN Connection Setting "bacon": The connection has been either disconnected or it failed. Cause: Connection to the server failed. Check network connection and make sure that address and port number of destination server are correct. (code 1)
+2023-02-25 18:48:48.867 Connection processing for VPN Connection Setting "bacon" has started.
+2023-02-25 18:48:48.869 VPN Connection Setting "bacon": Connection operation starting (this is now 1 times).
+2023-02-25 18:48:49.680 VPN Connection Setting "bacon": Now connected. Session name: "SID-BACON-REMOTO-62148"
+2023-02-25 18:49:14.106 Disconnecting the VPN Connection Setting "bacon".
+2023-02-25 18:49:14.224 VPN Connection Setting "bacon": The connection has been either disconnected or it failed. Cause: The command has been canceled by user. (code 6)
+2023-02-25 18:52:09.067 The VPN Connection Setting "bacon" has been deleted.
+2023-02-25 18:53:02.701 A new VPN Connection Setting "bacon" has been created.
+2023-02-25 19:19:24.385 The SoftEther VPN Client Engine has been shut down.
+2023-02-25 19:19:24.385 ------------------------------------------------------
+2023-02-25 19:19:37.513 ------------------------------------------------------
+2023-02-25 19:19:37.513 SoftEther VPN Client Version 4.41 Build 9782   (English)
+2023-02-25 19:19:37.513 Compiled 2022/11/17 16:36:25 by buildsan at crosswin with OpenSSL 3.0.7
+2023-02-25 19:19:37.513 The SoftEther VPN Client Engine has been started.
+2023-02-25 19:19:37.608 Loading configuration file...
+2023-02-25 19:19:37.609 Monitoring the directory "C:\Program Files\SoftEther VPN Client". If the amount of available free disk space becomes less than 8.00 GBytes, the backup files for log files and configurations that are saved on the sub-directories of this directory will be automatically deleted in the order of oldest first. The amount of free disk space that determines when to start deletion can be modified by changing the "AutoDeleteCheckDiskFreeSpaceMin" item in the configuration file.
+2023-02-25 19:19:37.609 The configuration file has been loaded.
+2023-02-25 19:20:31.822 The SoftEther VPN Client Engine has been shut down.
+2023-02-25 19:20:31.822 ------------------------------------------------------
+2023-02-25 19:20:44.178 ------------------------------------------------------
+2023-02-25 19:20:44.178 SoftEther VPN Client Version 4.41 Build 9782   (English)
+2023-02-25 19:20:44.178 Compiled 2022/11/17 16:36:25 by buildsan at crosswin with OpenSSL 3.0.7
+2023-02-25 19:20:44.178 The SoftEther VPN Client Engine has been started.
+2023-02-25 19:20:44.270 Loading configuration file...
+2023-02-25 19:20:44.271 Monitoring the directory "C:\Program Files\SoftEther VPN Client". If the amount of available free disk space becomes less than 8.00 GBytes, the backup files for log files and configurations that are saved on the sub-directories of this directory will be automatically deleted in the order of oldest first. The amount of free disk space that determines when to start deletion can be modified by changing the "AutoDeleteCheckDiskFreeSpaceMin" item in the configuration file.
+2023-02-25 19:20:44.271 The configuration file has been loaded.
+2023-02-25 19:21:59.896 The SoftEther VPN Client Engine has been shut down.
+2023-02-25 19:21:59.896 ------------------------------------------------------
+2023-02-25 19:22:12.394 ------------------------------------------------------
+2023-02-25 19:22:12.394 SoftEther VPN Client Version 4.41 Build 9782   (English)
+2023-02-25 19:22:12.394 Compiled 2022/11/17 16:36:25 by buildsan at crosswin with OpenSSL 3.0.7
+2023-02-25 19:22:12.394 The SoftEther VPN Client Engine has been started.
+2023-02-25 19:22:12.489 Loading configuration file...
+2023-02-25 19:22:12.491 Monitoring the directory "C:\Program Files\SoftEther VPN Client". If the amount of available free disk space becomes less than 8.00 GBytes, the backup files for log files and configurations that are saved on the sub-directories of this directory will be automatically deleted in the order of oldest first. The amount of free disk space that determines when to start deletion can be modified by changing the "AutoDeleteCheckDiskFreeSpaceMin" item in the configuration file.
+2023-02-25 19:22:12.491 The configuration file has been loaded.
+2023-02-25 19:48:02.689 The VPN Connection Setting "bacon" has been deleted.
