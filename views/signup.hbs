@@ -5,17 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
 <style>
     .card {
@@ -88,7 +82,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Signup</li>
             </ol>
         </nav>
-        <form id="postUserForm">
+        <form action="/signup" enctype="multipart/form-data" method="POST" id="postUserForm">
             <div class="form-group">
                 <label for="ipInput">Ingrese el Username</label>
                 <input type="text" class="form-control" id="newUserInput" name="username" required />
@@ -98,12 +92,18 @@
                 <input type="password" class="form-control" id="passwordInput" name="password" required />
             </div>
             <div class="form-group">
-                <label for="ipInput">Ingrese el Certificado</label>
-                <input type="text" class="form-control" id="certInput" name="cert" required />
+                 <label for="certInput">Ingrese el certificado</label>
+               <div class="custom-file">
+                <input type="file" class="custom-file-input" id="certInput"  onchange="updateInput(this)" aria-describedby="inputGroupFileAddon01" required>
+                <label class="custom-file-label" for="certInput">Choose file</label>
+            </div>
             </div>
             <div class="form-group">
-                <label for="ipInput">Ingrese la Key</label>
-                <input type="text" class="form-control" id="keyInput" name="key" required />
+                <label for="keyInput">Ingrese la Key</label>
+                <div class="custom-file">
+                <input type="file" class="custom-file-input" id="keyInput" onchange="updateInput(this)" aria-describedby="inputGroupFileAddon01" required>
+                <label class="custom-file-label" for="keyInput">Choose file</label>
+            </div>
             </div>
             <div style="display:flex; justify-content:center;margin:5% 0% 5% 0%; ">
             <h1>Usuarios
@@ -154,32 +154,36 @@
   </div>
 </div>
 </body>
-
+<script>
+  function updateInput(input) {
+    var fileName = input.files[0].name;
+    $(input).next('.custom-file-label').html(fileName);
+  }
+</script>
 <script>
 
 document.getElementById('postUserForm').addEventListener('submit', event => {
   event.preventDefault();
   const username = $('#newUserInput').val()
   const password = $('#passwordInput').val()
-  const cert = $('#certInput').val()
-  const key = $('#keyInput').val()
-  const user = {
-    username:username,
-    password:password,
-    cert:cert,
-    key:key,
-    users:users
-  }
- fetch(`/signup/`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(user)
-    }).then( result => {
-        alert("usuario creado exitosamente.")
-    }).catch(error => {
-    alert('Hubo un error al actualizar el usuario');
+  const cert = $('#certInput')[0].files[0]
+  const key = $('#keyInput')[0].files[0]
+  var formData = new FormData();
+
+  formData.append('key',key);
+ // Enviar el formulario al servidor utilizando Ajax
+    $.ajax({
+      url: '/signup/',
+      type: 'POST',
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function(response) {
+        console.log(response);
+      },
+      error: function(error) {
+        console.log(error);
+      }
     });
 });
 let users = [];

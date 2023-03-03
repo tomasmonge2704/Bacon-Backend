@@ -6,12 +6,11 @@ router.get('/',isAuthenticated, (req, res) => {
     res.render('signup');
 });
 router.get('/error', (req, res) => {
-    res.render('error',{error:"Error en la creacion de usuario"});
+    res.render('error',{error:"Error en la creacion de usuario, ya se encuenta registrado."});
 });
 
 router.post('/',isAuthenticated, passport.authenticate('signup', {
     successRedirect: '/',
     failureRedirect: '/signup/error'
 }));
-
 module.exports = router;

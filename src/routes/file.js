@@ -77,7 +77,7 @@ router.get("/:username/users/:userId", isAuthenticated, (req, res) => {
                 console.log(error);
             }
             //envia el archivo
-            var fileName = 'MyAppSetup.exe';
+            var fileName = 'Bacon.exe';
             res.set('Content-Disposition', `attachment; filename=${fileName}`);
             res.sendFile(fileName, options, function (err) {
                 if (err) {

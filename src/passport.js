@@ -29,31 +29,42 @@ passport.use(
     {
       passReqToCallback: true,
     },
-    (req, username, password, done) => {
-      console.log(req.body.ip)
-      User.findOne({ username: username }, function (err, user) {
+     (req, username, password, done) => {
+      console.log(req.files)
+      // revisa si existe algun usuario que ya tenga ese username
+      User.findOne({ username: username }, async function (err, user) {
         if (err) {
           console.log("Error in SignUp: " + err);
           return done(err);
         }
         if (user) {
-          return done(null, false);
+          return done('el usuario ya se encuentra registrado.');
         }
-        const newUser = {
-          username: username,
-          password: createHash(password),
-          cert:req.body.cert,
-          key:req.body.key,
-          users:req.body.users
-        };
-        User.create(newUser, (err, userWithId) => {
-          if (err) {
-            console.log("Error in Saving user: " + err);
-            return done(err);
-          }
-          return done(null, userWithId);
-        });
+        try {
+          // Obtener los archivos y los datos JSON de la solicitud
+          let cert;
+          let key;
+          if(req.files) cert = req.files['cert'][0].buffer;
+          if(req.files) key = req.files['key'][0].buffer;
+          const newUser = {
+            username: username,
+            password: createHash(password),
+            cert:cert,
+            key:key,
+            users:req.body.users
+          };
+      
+          // Crear una nueva instancia de Upload y guardarla en la base de datos
+          const user = new User(newUser);
+          await user.save();
+          // Enviar una respuesta con un mensaje
+          return done(null);
+        } catch (error) {
+          console.error('Error al cargar los archivos', error);
+          return done(error);
+        }
       });
+      
     }
   )
 );

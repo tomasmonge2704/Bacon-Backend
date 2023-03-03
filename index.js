@@ -10,9 +10,10 @@ const Routes = require('./src/routes/inicio');
 const signupRoutes = require('./src/routes/signup');
 const userRoutes = require('./src/routes/user');
 const fileRoutes = require('./src/routes/file')
-
+const {connectMongoDB} = require('./src/mongoDB/connect')
 const exphbs = require('express-handlebars')
-require('./src/mongoDB/connect')
+
+connectMongoDB()
 // Configuración de Express
 app.use(express.static('views'))
 app.engine("hbs", exphbs.engine({

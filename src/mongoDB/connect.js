@@ -2,11 +2,16 @@
 const mongoose = require('mongoose');
 const url = process.env.MongoURL
 
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log('Conectado a la base de datos');
-}).catch(err => {
-  console.log('Error al conectarse a la base de datos', err);
-});
+async function connectMongoDB() {
+  try {
+    mongoose.set('strictQuery', false)
+    await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log('Conexión a MongoDB establecida');
+  } catch (error) {
+    console.error('Error al conectarse a MongoDB', error);
+  }
+}
+
+module.exports = {
+  connectMongoDB,
+};
