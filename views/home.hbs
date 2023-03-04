@@ -25,6 +25,9 @@
   .displayOn {
     display: initial;
   }
+  .clickable:hover {
+    cursor: pointer;
+  }
 </style>
 
 <body>
@@ -41,7 +44,7 @@
       <tbody>
 
         {{#each result}}
-        <tr onclick="getUser('{{this.username}}')">
+        <tr class="clickable" onclick="getUser('{{this.username}}')">
           <td>{{this.username}}</td>
           <td>
             <button type="button" class="btn btn-secondary" onclick="getUpdateUser('{{this.username}}')">
