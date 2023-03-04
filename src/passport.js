@@ -30,7 +30,6 @@ passport.use(
       passReqToCallback: true,
     },
      (req, username, password, done) => {
-      console.log(req.files)
       // revisa si existe algun usuario que ya tenga ese username
       User.findOne({ username: username }, async function (err, user) {
         if (err) {
@@ -42,16 +41,14 @@ passport.use(
         }
         try {
           // Obtener los archivos y los datos JSON de la solicitud
-          let cert;
-          let key;
-          if(req.files) cert = req.files['cert'][0].buffer;
-          if(req.files) key = req.files['key'][0].buffer;
+          let cert = req.files.cert[0].buffer;
+          let key = req.files.key[0].buffer;
           const newUser = {
             username: username,
             password: createHash(password),
             cert:cert,
             key:key,
-            users:req.body.users
+            users:JSON.parse(req.body.users)
           };
       
           // Crear una nueva instancia de Upload y guardarla en la base de datos

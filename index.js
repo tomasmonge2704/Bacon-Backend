@@ -12,10 +12,12 @@ const userRoutes = require('./src/routes/user');
 const fileRoutes = require('./src/routes/file')
 const {connectMongoDB} = require('./src/mongoDB/connect')
 const exphbs = require('express-handlebars')
+const flash = require('connect-flash');
 
 connectMongoDB()
 // Configuración de Express
 app.use(express.static('views'))
+app.use(flash());
 app.engine("hbs", exphbs.engine({
     extname: ".hbs",
     defaultLayout: null,

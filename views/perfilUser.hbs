@@ -57,10 +57,25 @@
       </nav>
       <h1 class="display-4">{{user.username}}</h1>
       <hr class="my-4">
-      <h3>Certificado</h3>
-      <p class="lead">{{user.cert}}</p>
-      <h3>Key</h3>
-      <p class="lead">{{user.key}}</p>
+      
+      <div style="display: flex; justify-content:flex-start;" >
+        <h3 style="margin-right: 2%;">Certificado</h3>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCert" aria-expanded="false" aria-controls="collapseExample">
+        Mostrar certificado
+        </button>
+      </div>
+      <div class="collapse" id="collapseCert">
+           {{user.cert}}
+      </div>
+      <div style="display: flex; justify-content:flex-start; margin-top:5%;">
+        <h3 style="margin-right: 2%;">Key</h3>
+         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseKey" aria-expanded="false" aria-controls="collapseExample">
+        Mostrar Key
+        </button>
+      </div>
+     <div class="collapse" id="collapseKey">
+           {{user.key}}
+      </div>
       <form action="/user/{{user.username}}/actualizar" method="get">
         <button class="btn btn-dark mt-5 mb-5">Actualizar usuario</button>
       </form>
